@@ -1,0 +1,39 @@
+{
+  "name": "scaling-invention",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SenorMann/scaling-invention.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SenorMann/scaling-invention/issues"
+  },
+  "homepage": "https://github.com/SenorMann/scaling-invention#readme",
+  "engines": {
+    "node": "16",
+    "npm": "8"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
+    "@mui/material": "^5.10.0",
+    "next": "^12.2.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.4",
+    "@types/react": "^18.0.17",
+    "typescript": "^4.7.4"
+  }
+}
