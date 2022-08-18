@@ -12,7 +12,7 @@ class Stack extends cdk.Stack {
   public readonly CDN: IDistribution;
 
   constructor(scope: Construct, id: string, props: cdk.StackProps) {
-    super(scope, id);
+    super(scope, id, props);
     this.UIbucket = new S3(this, "");
     this.CDN = new Cloudfront(this, "", { bucket: this.UIbucket.UIBucket });
 
