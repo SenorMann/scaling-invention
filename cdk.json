@@ -1,0 +1,11 @@
+{
+  "app": "npx ts-node --preferTsExts infra/index.ts",
+  "context": {
+		"@aws-cdk/core:stackRelativeExports": true,
+		"@aws-cdk/aws-cloudfront:defaultSecurityPolicyTLSv1.2_2021": true,
+		"@aws-cdk/core:checkSecretUsage": true,
+		"@aws-cdk/aws-iam:minimizePolicies": true,
+		"@aws-cdk/core:validateSnapshotRemovalPolicy": true,
+		"@aws-cdk/core:target-partitions": ["aws", "aws-cn"]
+  }
+}
