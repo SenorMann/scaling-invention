@@ -30,6 +30,7 @@
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
     "@mui/material": "^5.10.0",
+    "aws-cdk": "^2.38.0",
     "aws-cdk-lib": "^2.38.0",
     "constructs": "^10.1.79",
     "next": "^12.2.5",
