@@ -18,11 +18,11 @@ export default class CloudfrontConstruct extends Construct implements IDistribut
   constructor(scope: Construct, id: string, props: Props) {
     super(scope, id);
 
-    const originAccessIdentity = new cloudfront.OriginAccessIdentity(this, "cdn-oai", {
+    const originAccessIdentity = new cloudfront.OriginAccessIdentity(this, "origin-access-identity", {
       comment: "Worker Order UI Origin Access Identity"
     });
 
-    this.distribution = new cloudfront.CloudFrontWebDistribution(scope, "cdn", {
+    this.distribution = new cloudfront.CloudFrontWebDistribution(scope, "distribution", {
       originConfigs: [
         {
           behaviors: [{ isDefaultBehavior: true }],

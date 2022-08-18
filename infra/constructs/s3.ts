@@ -13,7 +13,7 @@ export default class S3Construct extends Construct implements IBucket {
   constructor(scope: Construct, id: string) {
     super(scope, id);
 
-    this.UIBucket = new s3.Bucket(this, "s3-bucket", {
+    this.UIBucket = new s3.Bucket(this, "bucket", {
       encryption: s3.BucketEncryption.S3_MANAGED,
       publicReadAccess: false,
       websiteIndexDocument: "index.html",
