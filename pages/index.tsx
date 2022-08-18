@@ -5,7 +5,7 @@ export default function StaticPage() {
   const [rows, setRows] = useState<any[]>([]);
 
   useEffect(() => {
-    fetch('api/countries')
+    fetch('https://achieved-purple-sidecar.glitch.me/countries')
       .then((res) => res.json())
       .then(({ data }) => setRows(data));
   }, []);
