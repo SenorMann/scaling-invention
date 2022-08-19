@@ -23,12 +23,5 @@ export default class S3Construct extends Construct implements IBucket {
       // retain for UAT and PROD
       removalPolicy: cdk.RemovalPolicy.DESTROY,
     });
-
-    // new BucketDeployment(this, `${SERVICE_NAME}-bucket-deployment-${env}`, {
-    //   destinationBucket: this.UIBucket,
-    //   distribution: props.cloudfrontDistribution,
-    //   distributionPaths: ["/*"],
-    //   sources: [Source.asset(path.join(__dirname, "../../out"))],
-    // })
   }
 }
