@@ -24,6 +24,7 @@ class Stack extends cdk.Stack {
     })
     cdk.Tags.of(this).add("Author", "Malik Mahmud");
     cdk.Tags.of(this).add("ProjectName", "Scaling Invention");
+    this.templateOptions.description
   }
 }
 

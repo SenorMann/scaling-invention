@@ -24,5 +24,10 @@ jobs:
       - name: install dependencies
         run: npm ci
 
+      - name: Build static assets
+        run: |
+          npm run build
+          npm run export
+
       - name: Run CDK Destroy
         run: npm run destroy
