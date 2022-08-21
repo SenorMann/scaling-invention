@@ -1,6 +1,6 @@
-import { CloudFrontRequestEvent } from "aws-lambda";
+import { CloudFrontRequestEvent, Callback, Context } from "aws-lambda";
 
-export function main (event: CloudFrontRequestEvent) {
+export function main (event: CloudFrontRequestEvent, _ctx: Context, callback: Callback) {
   const { request } = event.Records[0].cf;
 
   if (request.uri.endsWith("/")) {
@@ -12,6 +12,5 @@ export function main (event: CloudFrontRequestEvent) {
   } else if (!(/\.\w+$/.test(request.uri))) {
     request.uri += "/index.html";
   }
-
-  return request;
+  callback(null, request);
 }
