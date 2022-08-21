@@ -16,7 +16,7 @@ export default function Posts({ posts }: Props) {
   return (
     <Page title="Posts">
       <ol>
-        {posts.map(({ id, title }) => (
+        {posts.slice(0, 10).map(({ id, title }) => (
           <li key={id}>
             <Link href={`posts/${id}`}>{title}</Link>
           </li>

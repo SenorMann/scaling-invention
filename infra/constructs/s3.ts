@@ -2,26 +2,21 @@ import * as cdk from "aws-cdk-lib";
 import * as s3 from "aws-cdk-lib/aws-s3";
 import { Construct } from "constructs";
 
-
-export interface IBucket {
+export interface IS3Construct {
   UIBucket: s3.IBucket;
 }
 
-export default class S3Construct extends Construct implements IBucket {
+export default class S3Construct extends Construct implements IS3Construct {
   public readonly UIBucket: s3.IBucket;
 
-  constructor(scope: Construct, id: string) {
+  constructor(scope: Construct, id: string, props: s3.BucketProps) {
     super(scope, id);
-
-    this.UIBucket = new s3.Bucket(this, "bucket", {
+    this.UIBucket = new s3.Bucket(this, "UISourceBucket", {
       encryption: s3.BucketEncryption.S3_MANAGED,
-      publicReadAccess: false,
-      websiteIndexDocument: "index.html",
-      websiteErrorDocument: "404.html",
-      // False for UAT and PROD
-      autoDeleteObjects: true,
-      // retain for UAT and PROD
-      removalPolicy: cdk.RemovalPolicy.DESTROY,
+      blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
+      autoDeleteObjects: props.autoDeleteObjects,
+      removalPolicy: props.removalPolicy,
     });
+    cdk.Tags.of(this.UIBucket).add("ResourceName", "Worker Order UI Source Bucket");
   }
 }

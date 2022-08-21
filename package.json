@@ -9,7 +9,7 @@
     "deploy": "cdk deploy --require-approval never --verbose",
     "destroy": "cdk destroy --force --verbose",
     "dev": "next dev",
-    "export": "next export",
+    "export": "npm run build && next export",
     "start": "next start"
   },
   "repository": {
@@ -31,8 +31,10 @@
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
     "@mui/material": "^5.10.0",
+    "@types/aws-lambda": "^8.10.102",
     "aws-cdk": "^2.38.0",
     "aws-cdk-lib": "^2.38.0",
+    "aws-lambda": "^1.0.7",
     "constructs": "^10.1.79",
     "next": "^12.2.5",
     "react": "^18.2.0",
