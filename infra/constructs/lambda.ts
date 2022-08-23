@@ -19,7 +19,7 @@ export default class LambdaConstruct extends Construct implements ILambdaConstru
 
   constructor(scope: Construct, id: string, props: Props) {
     super(scope, id);
-
+    const deployEnv = this.node.tryGetContext("deployEnv");
     const lambdaExecutionRole = new iam.Role(this, "LambdaExecutionRole", {
       assumedBy: new iam.CompositePrincipal(
         new iam.ServicePrincipal("lambda.amazonaws.com"),
@@ -40,6 +40,7 @@ export default class LambdaConstruct extends Construct implements ILambdaConstru
       },
       description: "This function appends index.html to Cloudfront origin requests that don’t include a file name or extension in the URL.",
       entry: path.join(__dirname, "../handlers/appendHtmlExtension.ts"),
+      functionName: `${deployEnv}-AppendHtmlExtensionFunction`,
       handler: "main",
       memorySize: 256,
       role: lambdaExecutionRole,

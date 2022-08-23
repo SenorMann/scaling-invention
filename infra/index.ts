@@ -55,7 +55,11 @@ class Stack extends cdk.Stack {
   }
 }
 
-const app = new cdk.App();
+const app = new cdk.App({
+  context: {
+    deployEnv: env,
+  }
+});
 new Stack(app, stackId, {
   terminationProtection: isProdOrUAT,
 });
