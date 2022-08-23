@@ -40,7 +40,6 @@ export default class LambdaConstruct extends Construct implements ILambdaConstru
       },
       description: "This function appends index.html to Cloudfront origin requests that don’t include a file name or extension in the URL.",
       entry: path.join(__dirname, "../handlers/appendHtmlExtension.ts"),
-      functionName: "AppendHtmlExtension",
       handler: "main",
       memorySize: 256,
       role: lambdaExecutionRole,
